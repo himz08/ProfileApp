@@ -1,19 +1,25 @@
 <!-- First page which controls registeratin and login  -->
 
 <div class="card">
-        <div class="card-header">
-                <h2> REGISTER </h2>
-        </div>
-        <div class="card-body text-center">
-                <app-register *ngIf="!isLogInClicked"></app-register>
-                <span class="bottomInfoBox" *ngIf="!isLogInClicked"> Already a USer ? <span class="navigationLink" (click)="onLogInClick()"> Log-in </span></span> 
-                <app-login *ngIf="isLogInClicked"></app-login>
-                <span class="bottomInfoBox" *ngIf="isLogInClicked"> New User ? <span class="navigationLink" (click)="onSignUpClick()"> SignUp </span></span>
-        </div>
+  <div class="card-header">
+    <h2 *ngIf="!isLogInClicked"> REGISTER </h2>
+    <h2 *ngIf="isLogInClicked"> LOGIN </h2>
+  </div>
 
-      </div>
+  <div class="card-body text-center">
+    <!-- Register Page   -->
+    <div *ngIf="!isLogInClicked">
+      <app-register></app-register>
+      <span class="bottomInfoBox"> Already a USer ? <span class="navigationLink" (click)="onLogInClick()"> Log-in
+        </span></span>
+    </div>
+    <!-- Login Page -->
+    <div *ngIf="isLogInClicked">
+      <app-login></app-login>
+      <span class="bottomInfoBox"> New User ? <span class="navigationLink" (click)="onSignUpClick()"> SignUp
+        </span></span>
 
+    </div>
+  </div>
 
-
-
-
+</div>

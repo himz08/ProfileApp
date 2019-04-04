@@ -53,7 +53,8 @@ export class RegisterComponent implements OnInit {
   signup() {                         //This function will get called on submition of registraton form
 
     this.user = {                    // All the data of the form will get saved in user variable
-      id: Math.floor((Math.random() * 100) + 1),
+      // id: Math.floor((Math.random() * 100) + 1),
+      id: (new Date).getTime(),      
       address: this.signupForm.value.address,
       firstName: this.signupForm.value.firstName,
       lastName: this.signupForm.value.lastName,
@@ -65,7 +66,7 @@ export class RegisterComponent implements OnInit {
     };
 
     if (this.user.password == this.signupForm.value.confirmPassword) {
-      this.services.signup(this.user)
+      this.services.signup(this.user)             // Will call the signup function to save the data in database file
         .subscribe((response) => {
 
           this.openSnackBar(this.signupMsg, this.action)
@@ -77,7 +78,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  openSnackBar(message: string, action: string) {
+  openSnackBar(message: string, action: string) {   // function to show required message/info
     this.snackBar.open(message, action, {
       duration: 2000,
     });

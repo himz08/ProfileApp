@@ -11,7 +11,7 @@ export class FaqComponent implements OnInit {
   constructor(private commonService : CommonService) { }
   
   ngOnInit() {
-    this.commonService.headerChanged.emit('Faq');
+    this.commonService.headerChanged.emit('Faq');  // to update the header
   }
 
 }

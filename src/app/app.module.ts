@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { CommonService } from './common.service';
 import { PrivateModule } from './private/private.module';
+import { CanDeactivateGuard } from './private/home-login/profile/can-deactivate-guard.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { PrivateModule } from './private/private.module';
     HttpClientModule,
    
   ],
-  providers: [HttpClient, AuthGuard, CommonService],
+  providers: [HttpClient, AuthGuard, CommonService, CanDeactivateGuard ], 
   bootstrap: [AppComponent]
 })
 

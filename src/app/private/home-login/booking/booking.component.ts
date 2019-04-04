@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { CommonService } from 'src/app/common.service';
 
 
-export interface Booking {
+export interface Booking {                            // Common interface for bookings
   id: number,
   address: string,
   dateTime: number,
@@ -12,7 +12,7 @@ export interface Booking {
   status: string
 }
 
-export interface Bookings extends Array<Booking> { }
+export interface Bookings extends Array<Booking> { }  // array of type booking
 
 
 @Component({
@@ -20,7 +20,7 @@ export interface Bookings extends Array<Booking> { }
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
 })
-export class BookingComponent implements OnInit {
+export class BookingComponent implements OnInit {     // required variables are defined here
   userId: string;
   bookings: Bookings;
   upcomingBookings: Bookings = [];
@@ -34,25 +34,24 @@ export class BookingComponent implements OnInit {
 
 
   ngOnInit() {
-    this.services.headerChanged.emit('My Bookings');
+    this.services.headerChanged.emit('My Bookings');    // event emitter to change the heading
     this.userId = localStorage.getItem("userId")
     this.fullName = localStorage.getItem("fullName");
-    this.fetchBookings()
+    this.fetchBookings()                                //everytime this root is loaded it will fetch the bookings
   }
 
   fetchBookings() {
 
-    this.services.getBookings()
+    this.services.getBookings()                         // function to fetch the bookings
       .subscribe((response: Bookings) => {
         this.bookings = response;
 
         localStorage.setItem('bookingCount', this.bookings.length.toString());
         console.log(localStorage.getItem('bookingCount'));
         this.bookingCount = this.bookings.length.toString();
-        this.services.localStorageDataChanged.emit();
-
+        this.services.localStorageDataChanged.emit();   // emitter to inform the navabr about booking count
         this.bookings.forEach(booking => {
-          if (booking.dateTime > (new Date).getTime())
+          if (booking.dateTime > (new Date).getTime())  // sorting of bookings acc to time
             this.upcomingBookings.push(booking)
           else
             this.pastBookings.push(booking)

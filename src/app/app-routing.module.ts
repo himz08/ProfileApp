@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { BookingComponent } from './private/home-login/booking/booking.component';
 import { FaqComponent } from './private/home-login/faq/faq.component';
 import { ProfileComponent } from './private/home-login/profile/profile.component';
+import { CanDeactivateGuard } from './private/home-login/profile/can-deactivate-guard.service';
 
 // const routes: Routes = [];
 
@@ -16,7 +17,7 @@ const appRoutes: Routes = [
   {path: 'homeLogin' , component : HomeLoginComponent, canActivate: [AuthGuard] , children: [
     { path: 'bookings', component: BookingComponent },
     { path: 'faq', component: FaqComponent},
-    { path: 'profile', component: ProfileComponent}
+    { path: 'profile', component: ProfileComponent , canDeactivate: [CanDeactivateGuard]}
    ]},
   
   { path: '**', component: HomeComponent }

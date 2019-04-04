@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { CommonService } from 'src/app/common.service';
 import { User } from 'src/app/register/register.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -19,20 +20,21 @@ export class ProfileComponent implements OnInit {
   message: string = "your profile has been updated";
   action: string = "Dismiss";
   bookingCount: string = localStorage.getItem('bookingCount') || "0"; 
+  changesSaved = false;
   
 
   constructor(private services: CommonService, public dialog: MatDialog, private router: Router, private snackBar: MatSnackBar) {
-    this.initialiseForm();
+    this.initialiseForm();  // to initialise the form
   }
 
   ngOnInit() {
 
-    this.services.headerChanged.emit('Profile');
-    this.userId = localStorage.getItem("userId");
+    this.services.headerChanged.emit('Profile');   // event emitter to update the header
+    this.userId = localStorage.getItem("userId");  
     this.fullName = localStorage.getItem("fullName");
-    this.services.localStorageDataChanged.emit();
+    this.services.localStorageDataChanged.emit();   // to update the name on navbar
 
-    this.services.getUser(this.userId)
+    this.services.getUser(this.userId)  // fetching users data
       .subscribe((response: any) => {
         this.user = response;
         this.profileForm = new FormGroup({
@@ -63,13 +65,14 @@ export class ProfileComponent implements OnInit {
   }
 
 
-  updateProfile(): void {
+  updateProfile(): void {         // function to update the profile
     this.user.fullName = this.profileForm.value.fullName;
     this.user.firstName = this.profileForm.value.fullName.split(' ')[0];
     this.user.lastName = this.profileForm.value.fullName.split(' ')[1];
     this.user.email = this.profileForm.value.email;
     this.user.address = this.profileForm.value.address;
     this.user.medHistory = this.profileForm.value.medHistory;
+    this.changesSaved = true;
 
     this.services.updateProfile(this.userId, this.user)
       .subscribe((response: any) => {
@@ -77,6 +80,24 @@ export class ProfileComponent implements OnInit {
         this.fullName = this.user.fullName;
         this.openSnackBar(this.message, this.action);
       })
+  }
+
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+
+  
+      if ( (this.user.fullName !== this.profileForm.value.fullName  ||
+           this.user.email !== this.profileForm.value.email ||
+           this.user.address !== this.profileForm.value.address ||
+           this.user.phoneNumber !== this.profileForm.value.phoneNumber ||
+           this.user.medHistory !== this.profileForm.value.medHistory) && !this.changesSaved
+           
+           ) {
+
+            return confirm ('Do you want to discard the chages ?');
+      } else {
+        return true;
+      }
+
   }
 
 }
