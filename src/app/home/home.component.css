@@ -1,0 +1,37 @@
+.fill-center{
+    width:80%;
+    margin: auto;
+    align-content: center;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color : rgb(156, 221, 59);
+    margin-left : 8%;
+
+
+}
+.navigationLink { 
+    text-decoration: none; 
+    color: blue;
+    } 
+    .navigationLink:hover { 
+    
+    text-decoration : underline;
+    color: rgb(60, 60, 240);
+    cursor: pointer;
+    
+    }
+
+    .bottomInfoBox {
+        padding: 4px 24px;
+        margin-top: 3px;
+        
+        background-color: rgb(236, 243, 243);
+    }
+
+
+
+/* font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif; */

@@ -1,0 +1,15 @@
+.tittleBox {
+
+    margin-bottom : 2px;
+    text-align: center;
+    background-color: rgb(253, 253, 249);
+}
+
+h3 {
+    padding: 2px;
+    color: green;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    
+    
+}

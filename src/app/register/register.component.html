@@ -1,0 +1,95 @@
+ <!-- Registeration Page for new users -->
+ 
+<div class="container">
+    <form class="" [formGroup]="signupForm" (ngSubmit)="signup()">
+        <mat-grid-list cols="2" rowHeight="5:1" gutterSize="0">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>First Name *</mat-label>
+                    <input matInput formControlName="firstName" placeholder="FirstName" name="firstName" value="">
+
+                    <mat-error *ngIf="!signupForm.get('firstName').valid && signupForm.get('firstName').touched">
+                        FirstName Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Last Name *</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Last Name" name="lastName" value="">
+
+                    <mat-error *ngIf="!signupForm.get('lastName').valid && signupForm.get('lastName').touched">
+                        LastName Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Email Address *</mat-label>
+                    <input matInput formControlName="email" placeholder="Email Address" name="email" value="">
+                    <mat-error *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+                        Email Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Phone Number *</mat-label>
+                    
+                    <input matInput formControlName="phoneNumber" placeholder="Phone Number" name="phoneNumber"
+                        value="">
+                    <mat-error *ngIf="!signupForm.get('phoneNumber').valid && signupForm.get('phoneNumber').touched">
+                        Phone Number Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Address *</mat-label>
+                    <input matInput formControlName="address" placeholder="Address" name="address" value="">
+                    <mat-error *ngIf="!signupForm.get('address').valid && signupForm.get('address').touched">
+                        Address Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Brief Medical History of the Patient</mat-label>
+                    <input matInput formControlName="medHistory" placeholder="Medical History" name="medHistory"
+                        value="">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Password *</mat-label>
+                    <input matInput type="password" formControlName="password" placeholder="password" name="password"
+                        value="">
+                    <mat-error *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+                        Password Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Confirm Password *</mat-label>
+                    <input matInput type="password" formControlName="confirmPassword" name="confirmPassword"
+                        placeholder="confirmPassword" value="">
+                    <mat-error
+                        *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched">
+                        Password Required
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <div class="register-button">
+            <button  class="btn btn-default register"  [disabled]="!signupForm.valid" 
+                type="submit">Register</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,17 @@
+.fill-center{
+    width:80%;
+    margin: auto;
+    align-content: center;
+}
+
+.PENDING{
+    color:red;
+}
+
+.COMPLETED{
+    color:greenyellow;
+}
+
+.ONTHEWAY{
+    color:blue;
+}

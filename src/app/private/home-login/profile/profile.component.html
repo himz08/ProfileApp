@@ -1,0 +1,64 @@
+<!-- <app-header 
+[bookingCount]="bookingCount"
+[fullName]="fullName"
+></app-header> -->
+
+<mat-divider></mat-divider>
+
+
+<mat-card class="fill-center">
+  <div>
+    <!-- <img src="" alt=""> -->
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+
+      <mat-grid-list cols="2" rowHeight="5:1">
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="example-half-width">
+            <mat-label>Full Name *</mat-label>
+            <input type="text" matInput placeholder="" formControlName="fullName">
+            <mat-error *ngIf="!profileForm.get('fullName').valid && profileForm.get('fullName').touched">
+              Full Name Required
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="example-half-width">
+            <mat-label>Email Address *</mat-label>
+            <input type="text" matInput placeholder="" formControlName="email">
+            <mat-error *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched">
+              Email Invalid
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="example-half-width">
+            <mat-label>Phone Number *</mat-label>
+            <input type="tel" matInput placeholder="" formControlName="phoneNumber">
+            <mat-error *ngIf="!profileForm.get('phoneNumber').valid && profileForm.get('phoneNumber').touched">
+              Phone Number Invalid
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="example-half-width">
+            <mat-label>Address *</mat-label>
+            <input type="text" matInput placeholder="" formControlName="address">
+            <mat-error *ngIf="!profileForm.get('address').valid && profileForm.get('address').touched">
+              Address Required
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="example-half-width">
+            <mat-label>Brief Medical Condition</mat-label>
+            <input type="text" matInput placeholder="" formControlName="medHistory">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-button mat-raised-button type="submit" [disabled]="!profileForm.valid" class="update" color="primary">UPDATE
+            PROFILE</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </div>
+</mat-card>

@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  
+  <span class="fill-remaining-space">Nurses Online</span>
+  <span>{{fullName}}</span>
+  <span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item (click)="profile()">
+        <mat-icon>home</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="bookings()">
+        <mat-icon matBadge="{{bookingCount}}" matBadgePosition="above after">people_outline</mat-icon>
+        <span>Bookings</span>
+      </button>
+      <button mat-menu-item (click)="faq()">
+        <mat-icon>videocam</mat-icon>
+        <span>FAQ's</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </span>
+</mat-toolbar>

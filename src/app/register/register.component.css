@@ -1,0 +1,35 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin: 5%;
+  }
+  
+
+  .register{
+    width: 40% ;
+    left: 25%;
+    align-content: center;
+    background-color: rgb(167, 216, 94);
+}
+
+.container{
+  margin:5%;
+}
+
+.register-button {
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: beige;
+}
+
+.container {
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

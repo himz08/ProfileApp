@@ -1,0 +1,25 @@
+.boxed{
+    margin: 5px;
+}
+
+.fill-center{
+    width:80%;
+    margin: auto;
+    align-content: center;
+}
+
+.example-half-width {
+    width: 80%;
+}
+
+p {
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+
+    font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
+
+}

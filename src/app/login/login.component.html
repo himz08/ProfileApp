@@ -1,0 +1,29 @@
+<!-- Thsi is the Log-in Page -->
+
+
+<form class="" [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-grid-list cols="1" rowHeight="10:1">
+    <mat-grid-tile>
+      <mat-form-field appearance="outline" class="example-half-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="abc@gmail.com" formControlName="email" />
+        <mat-error *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field appearance="outline" class="example-half-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="********" formControlName="password" />
+        <mat-error *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+          Password Required
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button [disabled]="!loginForm.valid" class=" btn btn-default loginBtn example-half-width" color="primary"
+        type="submit">Login</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

@@ -1,0 +1,33 @@
+
+
+<mat-divider></mat-divider>
+
+
+<mat-card class="fill-center">
+  <div>
+    <mat-tab-group>
+      <mat-tab label="Upcoming">
+        <mat-list>
+          <mat-list-item *ngFor="let booking of upcomingBookings">
+            <h4 matLine> {{booking.dateTime | date:'longDate'}}, {{booking.dateTime | date:'shortTime'}} </h4>
+            <h2 matLine> {{booking.patientName}} </h2> <span class="{{booking.status}}">{{booking.status}}</span>
+            <p matLine>
+              <span> {{booking.address}} </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-tab>
+      <mat-tab label="Past">
+        <mat-list>
+          <mat-list-item *ngFor="let booking of pastBookings">
+            <h4 matLine> {{booking.dateTime | date:'medium'}} </h4>
+            <h2 matLine> {{booking.patientName}} </h2> <span class="{{booking.status.split(' ').join('')}}">{{booking.status}}</span>
+            <p matLine>
+              <span> {{booking.address}} </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</mat-card>

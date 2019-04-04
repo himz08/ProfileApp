@@ -1,18 +1,54 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule, MatCardModule, MatGridListModule, MatInputModule, MatTabsModule, MatDividerModule, MatListModule, MatDialogModule, MatBadgeModule, MatExpansionModule, MatSnackBarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth.guard';
+import { CommonService } from './common.service';
+import { PrivateModule } from './private/private.module';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    PrivateModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+    MatCardModule,
+    MatGridListModule,
+    MatInputModule,
+    MatTabsModule,
+    MatDividerModule,
+    MatListModule,
+    MatDialogModule,
+    MatBadgeModule,
+    MatExpansionModule,
+    MatSnackBarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+   
   ],
-  providers: [],
+  providers: [HttpClient, AuthGuard, CommonService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
