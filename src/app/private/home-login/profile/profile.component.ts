@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
       })
   }
 
-  initialiseForm() {
+  initialiseForm() {  // initialising the form
     this.profileForm = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'fullName': new FormControl(null, Validators.required),
@@ -82,9 +82,9 @@ export class ProfileComponent implements OnInit {
       })
   }
 
-  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {  // to prevent the loss of changed data
 
-  
+  // checking all the vlaues of form with saved one
       if ( (this.user.fullName !== this.profileForm.value.fullName  ||
            this.user.email !== this.profileForm.value.email ||
            this.user.address !== this.profileForm.value.address ||

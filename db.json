@@ -1,0 +1,125 @@
+{
+  "Users": [
+    {
+      "id": 47,
+      "address": "2163 Sector-38C",
+      "firstName": "Himanshu",
+      "lastName": "Budhiraja",
+      "email": "hslb@gmail.com",
+      "medHistory": "",
+      "password": "qwerty",
+      "phoneNumber": "8295869999",
+      "fullName": "Himanshu Budhiraja"
+    },
+    {
+      "id": 88,
+      "address": "94",
+      "firstName": "Aditi",
+      "lastName": "Sarkar",
+      "email": "aditi@gmail.com",
+      "medHistory": "nil",
+      "password": "qwerty",
+      "phoneNumber": "7906216892",
+      "fullName": "Aditi Sarkar"
+    },
+    {
+      "id": 59,
+      "address": "Room 130, Bh8",
+      "firstName": "Deepak",
+      "lastName": "Saluja",
+      "email": "deepak@gmail.com",
+      "medHistory": null,
+      "password": "qwerty",
+      "phoneNumber": "123456789",
+      "fullName": "Deepak Saluja"
+    },
+    {
+      "id": 95,
+      "address": "2163 Sector 38C",
+      "firstName": "Ankit",
+      "lastName": "Suman",
+      "email": "ankit@gmail.com",
+      "medHistory": "",
+      "password": "qwerty",
+      "phoneNumber": "7874541212",
+      "fullName": "Ankit Suman"
+    },
+    {
+      "id": 1554416857996,
+      "address": "Bh8",
+      "firstName": "Abhishek",
+      "lastName": "Manchanda",
+      "email": "abhishek@gmail.com",
+      "medHistory": null,
+      "password": "qwerty",
+      "phoneNumber": "9780048007",
+      "fullName": "Abhishek Manchanda"
+    }
+  ],
+  "Bookings": [
+    {
+      "id": 1,
+      "dateTime": "1553960224377",
+      "patientName": "Himanshu",
+      "doctorName": "Ujjwal",
+      "status": "COMPLETED",
+      "address": "Boys Hostel 8, Panjab University"
+    },
+    {
+      "id": 2,
+      "dateTime": "1553960224377",
+      "patientName": "Arushi",
+      "doctorName": "Deeksha",
+      "status": "COMPLETED",
+      "address": "Girls Hostel 8, Panjab University"
+    },
+    {
+      "id": 3,
+      "dateTime": "1553977050897",
+      "patientName": "Rajat",
+      "doctorName": "Ujjwal",
+      "status": "COMPLETED",
+      "address": "Boys Hostel 8, Panjab University"
+    },
+    {
+      "id": 5,
+      "dateTime": "1553977050897",
+      "patientName": "Ajay",
+      "doctorName": "Raman",
+      "status": "ON THE WAY",
+      "address": "Boys Hostel 5, Panjab University"
+    },
+    {
+      "id": 6,
+      "dateTime": "1572805800000",
+      "patientName": "Anuj",
+      "doctorName": "Rishabh",
+      "status": "PENDING",
+      "address": "Boys Hostel 4, Panjab University"
+    },
+    {
+      "id": 7,
+      "dateTime": "1572805800000",
+      "patientName": "Abhinav",
+      "doctorName": "Rishabh",
+      "status": "PENDING",
+      "address": "Boys Hostel 4, Panjab University"
+    },
+    {
+      "id": 7,
+      "dateTime": "1667500200000",
+      "patientName": "Monica",
+      "doctorName": "Prashant",
+      "status": "PENDING",
+      "address": "Boys Hostel 4, Panjab University"
+    },
+    {
+      "id": 732,
+      "dateTime": "1867500200000",
+      "patientName": "Mozilla",
+      "doctorName": "Abhi",
+      "status": "PENDING",
+      "address": "Boys Hostel 4, Panjab University"
+    }
+  ]
+}
